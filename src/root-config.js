@@ -19,7 +19,7 @@ registerApplication(
   "@thawkin3/single-spa-demo-page-2",
   () => System.import("@thawkin3/single-spa-demo-page-2"),
   isActive.page2,
-  { domElement: document.getElementById("page-1-container") }
+  { domElement: document.getElementById("page-2-container") }
 );
 
 start();
