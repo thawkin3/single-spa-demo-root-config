@@ -3,6 +3,9 @@ node_js:
   - node
 script:
   - yarn build
+  - echo "Folder name - $TRAVIS_COMMIT"
+  - mkdir -p dist/@thawkin3/root-config/$TRAVIS_COMMIT
+  - mv dist/*.* dist/@thawkin3/root-config/$TRAVIS_COMMIT/
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
