@@ -49,12 +49,12 @@
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "serve": "^11.2.0",
-    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "single-spa": "^4.4.2"
+    "single-spa": "^4.4.2",
+    "webpack": "^4.41.2"
   }
 }
