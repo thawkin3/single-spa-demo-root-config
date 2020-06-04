@@ -1,11 +1,6 @@
 language: node_js
 node_js:
   - node
-script:
-  - yarn build
-  - echo "Commit sha - $TRAVIS_COMMIT"
-  - mkdir -p dist/@thawkin3/root-config/$TRAVIS_COMMIT
-  - mv dist/*.* dist/@thawkin3/root-config/$TRAVIS_COMMIT/
 env:
   global:
     # include $HOME/.local/bin for `aws`
@@ -14,6 +9,11 @@ before_install:
   - pyenv global 3.7.1
   - pip install -U pip
   - pip install awscli
+script:
+  - yarn build
+  - echo "Commit sha - $TRAVIS_COMMIT"
+  - mkdir -p dist/@thawkin3/root-config/$TRAVIS_COMMIT
+  - mv dist/*.* dist/@thawkin3/root-config/$TRAVIS_COMMIT/
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
