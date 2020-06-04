@@ -1,10 +1,28 @@
 {
+  "name": "single-spa-demo",
+  "version": "0.0.0",
+  "description": "A microfrontend app built with single-spa",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thawkin3/single-spa-demo-root-config.git"
+  },
+  "keywords": [
+    "demo",
+    "mfe",
+    "micro frontend",
+    "microfrontend",
+    "single-spa",
+    "single page application"
+  ],
+  "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode=development --port 9000 --env.isLocal=true",
+    "build": "webpack --mode=production",
     "lint": "eslint src",
-    "test": "jest",
+    "prestart": "yarn build",
     "prettier": "prettier --write './**'",
-    "build": "webpack --mode=production"
+    "start:dev": "webpack-dev-server --mode=development --port 9000 --env.isLocal=true",
+    "start": "node server.js",
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -36,6 +54,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "express": "^4.17.1",
     "single-spa": "^4.4.2"
   }
 }
