@@ -6,7 +6,12 @@ script:
   - echo "Commit sha - $TRAVIS_COMMIT"
   - mkdir -p dist/@thawkin3/root-config/$TRAVIS_COMMIT
   - mv dist/*.* dist/@thawkin3/root-config/$TRAVIS_COMMIT/
+env:
+  global:
+    # include $HOME/.local/bin for `aws`
+    - PATH=$HOME/.local/bin:$PATH
 before_install:
+  - pyenv global 3.7.1
   - pip install -U pip
   - pip install awscli
 deploy:
